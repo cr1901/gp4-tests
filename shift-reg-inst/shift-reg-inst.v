@@ -93,11 +93,11 @@ GP_SHREG #(
     );
 `endif
 
-    
+
 always @(posedge clk) begin
     shift_hi = {shift_mid_taps[1], shift_hi[0:10]};
     `ifndef NO_INFER_GP_SHREG_AT_ALL
-        shift_mid_taps = {shift_lo_taps[0], shift_mid_taps[0]};
+        shift_mid_taps = {shift_lo_taps[1], shift_mid_taps[0]};
     `endif
 end
 
